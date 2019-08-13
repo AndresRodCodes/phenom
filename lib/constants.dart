@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF392cb4);
+const kPrimaryColor = Color(0xFF249bb1);
 
 const kTextFieldDecoration = InputDecoration(
   hintStyle: TextStyle(
@@ -11,11 +11,11 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
   enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+    borderSide: BorderSide(color: kPrimaryColor, width: 1.0),
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+    borderSide: BorderSide(color: kPrimaryColor, width: 2.0),
     borderRadius: BorderRadius.all(Radius.circular(10.0)),
   ),
 );

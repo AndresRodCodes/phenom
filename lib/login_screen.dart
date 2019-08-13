@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -16,11 +17,24 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.fitness_center,
-              size: 100.0,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(
+                  "Be",
+                  style: TextStyle(fontSize: 43.0, fontFamily: 'SpecialElite'),
+                ),
+                SizedBox(width: 20.0, height: 100.0),
+                RotateAnimatedTextKit(
+                    duration: Duration(milliseconds: 7000),
+                    isRepeatingAnimation: false,
+                    text: ["STRONG", "BETTER", "CONSISTENT"],
+                    textStyle:
+                        TextStyle(fontSize: 40.0, fontFamily: 'SpecialElite'),
+                    textAlign: TextAlign.start,
+                    alignment: AlignmentDirectional.topStart),
+              ],
             ),
-            SizedBox(height: 20.0),
             TextField(
               textAlign: TextAlign.center,
               keyboardType: TextInputType.emailAddress,
@@ -41,7 +55,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 12,
             ),
             ConstrainedBox(
               constraints: BoxConstraints(minWidth: double.infinity),

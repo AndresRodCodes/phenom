@@ -8,8 +8,10 @@ class PhenomD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light()
-          .copyWith(primaryColor: kPrimaryColor, accentColor: Colors.white),
+      theme: ThemeData.light().copyWith(
+          primaryColor: kPrimaryColor,
+          accentColor: Colors.white,
+          scaffoldBackgroundColor: Colors.white),
       home: LoginScreen(),
     );
   }
