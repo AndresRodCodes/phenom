@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xFF249bb1);
 
+const kCursorColor = Colors.black;
+
 const kTextFieldDecoration = InputDecoration(
   hintStyle: TextStyle(
     color: Colors.grey,

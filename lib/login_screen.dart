@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
+  final FocusNode _passwordFocus = FocusNode();
+  String _emailInput;
+  String _passwordInput;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                 RotateAnimatedTextKit(
                     duration: Duration(milliseconds: 7000),
                     isRepeatingAnimation: false,
-                    text: ["STRONG", "BETTER", "CONSISTENT"],
+                    text: ["STRONG", "BETTER", "MORE", "CONSISTENT"],
                     textStyle:
                         TextStyle(fontSize: 40.0, fontFamily: 'SpecialElite'),
                     textAlign: TextAlign.start,
@@ -36,8 +41,15 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             TextField(
-              textAlign: TextAlign.center,
               keyboardType: TextInputType.emailAddress,
+              cursorColor: kCursorColor,
+              textInputAction: TextInputAction.next,
+              onChanged: (input) {
+                _emailInput = input;
+              },
+              onSubmitted: (v) {
+                FocusScope.of(context).requestFocus(_passwordFocus);
+              },
               decoration: kTextFieldDecoration.copyWith(
                 labelText: 'Email',
                 prefixIcon: Icon(Icons.email),
@@ -47,8 +59,12 @@ class LoginScreen extends StatelessWidget {
               height: 10.0,
             ),
             TextField(
-              textAlign: TextAlign.center,
+              cursorColor: kCursorColor,
               obscureText: true,
+              focusNode: _passwordFocus,
+              onChanged: (input) {
+                _passwordInput = input;
+              },
               decoration: kTextFieldDecoration.copyWith(
                 labelText: 'Password',
                 prefixIcon: Icon(Icons.lock_outline),
@@ -68,6 +84,12 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textColor: Colors.white,
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ),
+                  );
                   print('Login');
                 },
               ),
