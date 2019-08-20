@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:phenom_d/constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'dashboard_screen.dart';
+import 'package:phenom_d/screens/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   final FocusNode _passwordFocus = FocusNode();

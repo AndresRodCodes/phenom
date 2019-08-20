@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'package:phenom_d/screens/login_screen.dart';
 import 'constants.dart';
 
 void main() => runApp(PhenomD());
