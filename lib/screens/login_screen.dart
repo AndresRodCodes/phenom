@@ -84,13 +84,15 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Dashboard(),
-                    ),
-                  );
-                  print('Login');
+                  print(_emailInput);
+                  print(_passwordInput);
+
+//                  Navigator.push(
+//                    context,
+//                    MaterialPageRoute(
+//                      builder: (context) => Dashboard(),
+//                    ),
+//                  );
                 },
               ),
             ),

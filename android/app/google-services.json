@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "49281828567",
+    "firebase_url": "https://phenom-flutter-app.firebaseio.com",
+    "project_id": "phenom-flutter-app",
+    "storage_bucket": "phenom-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49281828567:android:0c4c83442fceb879",
+        "android_client_info": {
+          "package_name": "com.ardevelopment.phenom_d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49281828567-necuor4cfu9et130iqan1v6bmupmlh7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD7TsPYTRGQ2sax5yYib5roKMU-tf6cF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49281828567-necuor4cfu9et130iqan1v6bmupmlh7j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
