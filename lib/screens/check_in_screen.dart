@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'page_one.dart';
 import 'page_two.dart';
 import 'PageThree.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CheckIn extends StatefulWidget {
   @override
@@ -10,6 +12,22 @@ class CheckIn extends StatefulWidget {
 }
 
 class _CheckInState extends State<CheckIn> {
+  final _auth = FirebaseAuth.instance;
+  FirebaseUser loggedInUser;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async {
+    final user = await _auth.currentUser();
+    if (user != null) {
+      loggedInUser = user;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

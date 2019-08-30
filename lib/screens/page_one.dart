@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:phenom_d/brain_list/check_in_list.dart';
 
 class PageOne extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class PageOne extends StatefulWidget {
 }
 
 class _PageOneState extends State<PageOne> {
-  int weight;
+  int weight = 170;
 
   CupertinoPicker iOSPicker() {
     List<Widget> pickerItems = [];
@@ -23,13 +24,25 @@ class _PageOneState extends State<PageOne> {
         scrollController: FixedExtentScrollController(initialItem: 170),
         onSelectedItemChanged: (index) {
           setState(() {
+            index = weight;
             weight = index;
           });
-          print(weight);
         },
         children: pickerItems);
   }
 
+  @override
+  void initState() {
+    super.initState();
+    ClientResults.results.clear();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    ClientResults.results.add(weight.toString());
+    print(ClientResults.results);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

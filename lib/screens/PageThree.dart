@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:phenom_d/constants.dart';
-import 'package:phenom_d/constants.dart';
 
 enum Consistency { one, five, ten }
 
@@ -33,6 +32,7 @@ class _PageThreeState extends State<PageThree> {
                 onChanged: (Consistency value) {
                   setState(() {
                     _consistency = value;
+                    print(_consistency.index);
                   });
                 },
               ),
@@ -45,6 +45,7 @@ class _PageThreeState extends State<PageThree> {
                 onChanged: (Consistency value) {
                   setState(() {
                     _consistency = value;
+                    print(_consistency.index);
                   });
                 },
               ),
@@ -57,6 +58,7 @@ class _PageThreeState extends State<PageThree> {
                 onChanged: (Consistency value) {
                   setState(() {
                     _consistency = value;
+                    print(_consistency.index);
                   });
                 },
               ),
