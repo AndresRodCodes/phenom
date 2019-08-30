@@ -13,6 +13,9 @@ class _CheckInState extends State<CheckIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Check-in'),
+      ),
         body: PageView(
       children: <Widget>[
         PageOne(),
