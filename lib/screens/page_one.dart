@@ -21,10 +21,9 @@ class _PageOneState extends State<PageOne> {
     return CupertinoPicker(
         backgroundColor: Colors.white,
         itemExtent: 34.0,
-        scrollController: FixedExtentScrollController(initialItem: 170),
+        scrollController: FixedExtentScrollController(initialItem: weight),
         onSelectedItemChanged: (index) {
           setState(() {
-            index = weight;
             weight = index;
           });
         },
