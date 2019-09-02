@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phenom_d/constants.dart';
-import 'package:phenom_d/brain_list/check_in_list.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:phenom_d/brain_list/result.dart';
 
 enum Consistency { one, five, ten }
 
@@ -78,7 +78,6 @@ class _PageThreeState extends State<PageThree> {
                 onChanged: (Consistency value) {
                   setState(() {
                     _consistency = value;
-                    print(_consistency.index);
                   });
                 },
               ),
@@ -89,11 +88,14 @@ class _PageThreeState extends State<PageThree> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0)),
               onPressed: () {
+                Result.consistency = _consistency.index;
+
                 _firestore.collection('checkin').add({
                   'email' : loggedInUser.email,
-                  'weight' : ClientResults.results[0],
+                  'weight' : Result.weight,
+                  'stateOfMind' : Result.stateOfMind,
+                  'consistency' :Result.consistency,
                 });
-                print(ClientResults.results);
                 Navigator.pop(context);
               },
             ),

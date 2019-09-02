@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:phenom_d/brain_list/check_in_list.dart';
+import 'package:phenom_d/brain_list/result.dart';
 
 class PageOne extends StatefulWidget {
   @override
@@ -33,14 +33,16 @@ class _PageOneState extends State<PageOne> {
   @override
   void initState() {
     super.initState();
-    ClientResults.results.clear();
+    //ClientResults.results.clear();
   }
 
   @override
   void dispose() {
     super.dispose();
-    ClientResults.results.add(weight.toString());
-    print(ClientResults.results);
+    Result.weight = weight;
+    print(Result.weight);
+//    ClientResults.results.add(weight.toString());
+//    print(ClientResults.results);
   }
   @override
   Widget build(BuildContext context) {

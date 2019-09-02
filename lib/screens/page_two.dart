@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phenom_d/constants.dart';
-import 'page_one.dart';
+import 'package:phenom_d/brain_list/result.dart';
 
 enum StateOfMind { notFellingIt, movingForward, unstoppable }
 
@@ -11,10 +11,14 @@ class PageTwo extends StatefulWidget {
 
 class _PageTwoState extends State<PageTwo> {
   StateOfMind _mind = StateOfMind.movingForward;
+
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    super.dispose();
+    Result.stateOfMind = _mind.index;
+    print(Result.stateOfMind);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +78,5 @@ class _PageTwoState extends State<PageTwo> {
         ),
       ),
     );
-    ;
   }
 }
